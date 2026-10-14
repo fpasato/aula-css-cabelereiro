@@ -1,0 +1,32 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+
+:root {
+  /* --4- Fundos (Backgrounds) --- */
+  --bg-primary: #fbfbfb;      /* Off-White Suave / Fundo Principal */
+  --bg-secondary: #f3f0ec;    /* Nude/Areia Claro / Fundo de Seções Alternadas */
+  --bg-card: #ffffff;         /* Branco Puro / Fundo dos Cartões de Depoimentos */
+
+  /* --- Textos --- */
+  --text-primary: #1a1a1a;    /* Grafite Quase Preto / Títulos e Destaques */
+  --text-secondary: #4a4a4a;  /* Grafite Médio / Parágrafos e Subtítulos */
+  --text-muted: #8c8c8c;      /* Cinza Neutro / Legendas e Detalhes Menores */
+
+  /* --- Destaques e Ação (CTA) --- */
+  --primary-accent: #c89d7c;   /* Terracota/Nude Elegante / Botões e Ícones */
+  --primary-accent-hover: #b08565; /* Tom Mais Fechado / Efeito Hover dos Botões */
+
+  /* --- WhatsApp / Contato --- */
+  --whatsapp-color: #25d366;  /* Verde WhatsApp Oficial */
+  --whatsapp-hover: #1ebc57;  /* Verde WhatsApp Hover */
+
+  /* --- Bordas e Sombras --- */
+  --border-color: #e5e0d8;    /* Borda Suave em Tom Areia */
+  --shadow-color: rgba(0, 0, 0, 0.05); /* Sombra Leve para Cartões e Header */
+}

@@ -1,0 +1,339 @@
+
+/* ===== VARIÁVEIS ===== */
+
+.header {
+  --color-bg: #faf8f4;
+  --color-text: #302821;
+  --color-muted: #81776b;
+  --color-accent: #a98755;
+  --color-border: #e8e0d5;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* ===== CONTAINER ===== */
+
+.container {
+  width: min(1200px, calc(100% - 80px));
+  min-height: 94px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+}
+
+/* ===== LOGO ===== */
+
+.logo {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  column-gap: 5px;
+
+  min-width: 150px;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.logoName,
+.logoHighlight {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 29px;
+  font-weight: 400;
+  letter-spacing: -1.5px;
+}
+
+.logoHighlight {
+  color: var(--color-accent);
+  font-style: italic;
+}
+
+.logoSubtitle {
+  flex-basis: 100%;
+  margin-top: 5px;
+
+  color: var(--color-muted);
+  font-family: Arial, sans-serif;
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+
+/* ===== NAVEGAÇÃO ===== */
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.navLink {
+  position: relative;
+  padding: 10px 0;
+
+  color: var(--color-muted);
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+
+  transition: color 0.25s ease;
+}
+
+.navLink::after {
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+
+  width: 0;
+  height: 1px;
+  background: var(--color-accent);
+  content: '';
+
+  transition: width 0.25s ease;
+}
+
+.navLink:hover {
+  color: var(--color-text);
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+/* ===== BOTÃO CTA ===== */
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  padding: 15px 19px;
+  border: 1px solid var(--color-text);
+
+  background: var(--color-text);
+  color: #fff;
+
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.ctaButton:hover {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.ctaArrow {
+  font-size: 16px;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.ctaButton:hover .ctaArrow {
+  transform: translate(2px, -2px);
+}
+
+/* ===== BOTÃO MOBILE ===== */
+
+.menuToggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.menuToggle span {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--color-text);
+
+  transition:
+    transform 0.25s ease,
+    width 0.25s ease;
+}
+
+.menuToggle span:nth-child(2) {
+  width: 17px;
+  margin-left: auto;
+}
+
+.menuToggleOpen span:first-child {
+  transform: translateY(3.5px) rotate(45deg);
+}
+
+.menuToggleOpen span:nth-child(2) {
+  width: 24px;
+  transform: translateY(-3.5px) rotate(-45deg);
+}
+
+/* ===== TABLETS ===== */
+
+@media (max-width: 1050px) {
+  .container {
+    width: calc(100% - 48px);
+    gap: 22px;
+  }
+
+  .nav {
+    gap: 18px;
+  }
+
+  .navLink {
+    font-size: 11px;
+  }
+
+  .ctaButton {
+    gap: 10px;
+    padding: 14px;
+    font-size: 10px;
+  }
+}
+
+/* ===== CELULARES ===== */
+
+@media (max-width: 760px) {
+  .container {
+    width: calc(100% - 36px);
+    min-height: 78px;
+    gap: 16px;
+  }
+
+  .logo {
+    min-width: 0;
+    margin-right: auto;
+  }
+
+  .logoName,
+  .logoHighlight {
+    font-size: 26px;
+  }
+
+  .logoSubtitle {
+    font-size: 7px;
+    letter-spacing: 2.5px;
+  }
+
+  .ctaButton {
+    gap: 8px;
+    padding: 12px;
+    font-size: 10px;
+  }
+
+  .menuToggle {
+    display: flex;
+    flex-shrink: 0;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+
+    padding: 10px 24px 20px;
+    border-bottom: 1px solid var(--color-border);
+
+    background: var(--color-bg);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+
+    transition:
+      opacity 0.25s ease,
+      visibility 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .navOpen {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .navLink {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--color-border);
+
+    font-size: 13px;
+  }
+
+  .navLink:last-child {
+    border-bottom: none;
+  }
+
+  .navLink::after {
+    display: none;
+  }
+}
+
+/* ===== CELULARES PEQUENOS ===== */
+
+@media (max-width: 390px) {
+  .container {
+    width: calc(100% - 24px);
+    gap: 8px;
+  }
+
+  .logoName,
+  .logoHighlight {
+    font-size: 23px;
+  }
+
+  .ctaButton {
+    padding: 10px 8px;
+    font-size: 9px;
+  }
+
+  .ctaArrow {
+    font-size: 13px;
+  }
+
+  .menuToggle {
+    width: 32px;
+    padding: 4px;
+  }
+}
+
+/* ===== ACESSIBILIDADE ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  .header *,
+  .header *::before,
+  .header *::after {
+    transition: none !important;
+  }
+}
